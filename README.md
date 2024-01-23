@@ -5,6 +5,14 @@
     * [Creation d'un PV](#d)
     * [La Suppression d'un PV](#e)
   * [volume Groupe](#f)
+    * [La Creation d'un volume Groupe](#j)
+    * [Étendre un volume Groupe](#h)
+    * [Réduire un volume Groupe](#i)
+    * [Supprimer un volume Groupe](#g)
+    * [Les Volumes Logiques](#k)
+    * [Snapshots](#l)
+    * [Etendre une LV](#m)
+    * [Reduire une LV](#n)
 
 # LVM sous Linux
 
@@ -170,7 +178,7 @@ PV         VG Fmt  Attr PSize PFree
 
 #### volume Groupe <a name="f"><a/>
 
-##### La Creation d'un volume Groupe (VG)
+##### La Creation d'un volume Groupe (VG) <a name="j"><a/>
 
 Les groupes de volumes sont créés à l'aide de la commande `vgcreate`. Le premier argument de vgcreate est le nom que vous souhaitez donner à ce groupe de volumes, et le reste est la liste des volumes physiques
 
@@ -229,7 +237,7 @@ $ vgdisplay
   VG UUID               : LYVE9P-vY0G-OAW6-an8q-yfBx-rrB1-YU61m1
 ```
 
-##### 1.2. Étendre un volume Groupe (VG)
+##### Étendre un volume Groupe (VG) <a name="h"><a/>
 
 Étendre un groupe de volumes signifie ajouter des volumes physiques supplémentaires à un groupe de volumes. Pour ce faire, la commande vgextend est utilisée. La syntaxe est simple :
 
@@ -240,7 +248,7 @@ $ vgextend vg1 /dev/sde
 Volume group "vg1" successfully extended
 ```
 
-##### 1.3 Réduire un volume Groupe
+##### Réduire un volume Groupe <a name="i"><a/>
 
 Tout comme étendre un groupe de volumes signifie ajouter un autre volume physique, le réduire signifie supprimer un ou plusieurs volumes physiques.
 
@@ -250,13 +258,13 @@ $ vgreduce vg1 /dev/sde
 Removed "/dev/sde" from volume group "vg1"
 ```
 
-##### 1.4 Supprimer un volume Groupe
+##### Supprimer un volume Groupe <a name="g"><a/>
 
 ```bash
 $ vgremove vg1
 ```
 
-#### Les Volumes Logiques
+#### Les Volumes Logiques <a name="k"><a/>
 
 Les volumes logiques sont créés à l'aide de la commande `lvcreate`. La syntaxe couramment utilisée se présente comme suit :
 
@@ -285,7 +293,7 @@ $ mkdir /mnt/lv1
 $ mount /dev/vg1/lv1 /mnt/lv1
 ```
 
-##### 1.1 Snapshots
+##### Snapshots <a name="l"><a/>
 
 Creer une Snapshot d'un Volume Logique a l'aide de commande `lvcreate`
 
@@ -302,7 +310,7 @@ Monter
 $ mount /dev/vg1/SnapShot01 /mnt/Snap-Of-lv1
 ```
 
-##### 1.2 Etendre une LV
+##### Etendre une LV <a name="m"><a/>
 
 ```bash
 $ lvrextend -L 20G /dev/vg1/lv1
@@ -314,7 +322,7 @@ $ resize2fs /dev/vg1/lv1
 $ xfs_growfs /dev/vg1/lv1
 ```
 
-##### 1.2 Reduire une LV
+##### Reduire une LV <a name="n"><a/>
 
 ```bash
 # demonter
