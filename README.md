@@ -1,6 +1,14 @@
+# Table Of contents
+* [Introduction](#Introduction)
+* [Configuration](#Configuration)
+  * [Physical Volumes](#"Physical-Volumes")
+    * [Creation d'un PV](#"Creation-d'un-PV")
+    * [La Suppression d'un PV](#"La-Suppression-d'un-PV")
+  * [volume Groupe](#"volume-Groupe")
+
 # LVM sous Linux
 
-## Introduction
+## Introduction <a>name="Introduction"<a/>
 
 <br/>
 
@@ -19,7 +27,7 @@ Il offre une flexibilte en permettant de redimensionnement dynamique des LV, la 
 
 </ul>
 
-## Configuration
+## Configuration <a>name="Configuration"<a/>
 
 ```sh
 $ lsblk -o NAME,SIZE,FSTYPE
@@ -37,9 +45,9 @@ sdd       5G
 sde       5G
 ```
 
-#### 1. volume Pyhisque
+#### 1. volume Pyhisque <a>name="Physical Volumes"<a/>
 
-##### Creation d'un PV (Physical Volume)
+##### Creation d'un PV (Physical Volume) <a>name="Creation d'un PV"<a/>
 
 ```bash
 $ pvcreate /dev/sdc
@@ -140,7 +148,7 @@ Allocated PE          0
 PV UUID               bf7ghn-QkPm-EUdp-GdyW-shMG-5sMn-VhNtYB
 ```
 
-##### La Suppression d'un PV (Physical Volume)
+##### La Suppression d'un PV (Physical Volume) <a>name="La Suppression d'un PV"<a/>
 
 ```bash
 $ pvremove /dev/sdd2
@@ -160,7 +168,7 @@ PV         VG Fmt  Attr PSize PFree
 /dev/sdd1     lvm2 ---  2.50g 2.50g
 ```
 
-#### 1. volume Groupe
+#### 1. volume Groupe <a>name="volume Groupe"<a/>
 
 ##### 1.1. La Creation d'un volume Groupe (VG)
 
