@@ -1,14 +1,14 @@
 # Table Of contents
-* [Introduction](#Introduction)
-* [Configuration](#Configuration)
-  * [Physical Volumes](#"Physical-Volumes")
-    * [Creation d'un PV](#"Creation-d'un-PV")
-    * [La Suppression d'un PV](#"La-Suppression-d'un-PV")
-  * [volume Groupe](#"volume-Groupe")
+* [Introduction](#a)
+* [Configuration](#b)
+  * [Physical Volumes](#c)
+    * [Creation d'un PV](#d)
+    * [La Suppression d'un PV](#e)
+  * [volume Groupe](#f)
 
 # LVM sous Linux
 
-## Introduction <a>name="Introduction"<a/>
+## Introduction <a id="a"></a>
 
 <br/>
 
@@ -27,7 +27,7 @@ Il offre une flexibilte en permettant de redimensionnement dynamique des LV, la 
 
 </ul>
 
-## Configuration <a>name="Configuration"<a/>
+## Configuration <a id="b"></a>
 
 ```sh
 $ lsblk -o NAME,SIZE,FSTYPE
@@ -45,9 +45,9 @@ sdd       5G
 sde       5G
 ```
 
-#### 1. volume Pyhisque <a>name="Physical Volumes"<a/>
+#### volume Pyhisque <a id="c"></a>
 
-##### Creation d'un PV (Physical Volume) <a>name="Creation d'un PV"<a/>
+##### Creation d'un PV (Physical Volume) <a id="d"></a>
 
 ```bash
 $ pvcreate /dev/sdc
@@ -148,7 +148,7 @@ Allocated PE          0
 PV UUID               bf7ghn-QkPm-EUdp-GdyW-shMG-5sMn-VhNtYB
 ```
 
-##### La Suppression d'un PV (Physical Volume) <a>name="La Suppression d'un PV"<a/>
+##### La Suppression d'un PV (Physical Volume) <a id="e"><a/>
 
 ```bash
 $ pvremove /dev/sdd2
@@ -168,9 +168,9 @@ PV         VG Fmt  Attr PSize PFree
 /dev/sdd1     lvm2 ---  2.50g 2.50g
 ```
 
-#### 1. volume Groupe <a>name="volume Groupe"<a/>
+#### volume Groupe <a name="f"><a/>
 
-##### 1.1. La Creation d'un volume Groupe (VG)
+##### La Creation d'un volume Groupe (VG)
 
 Les groupes de volumes sont créés à l'aide de la commande `vgcreate`. Le premier argument de vgcreate est le nom que vous souhaitez donner à ce groupe de volumes, et le reste est la liste des volumes physiques
 
