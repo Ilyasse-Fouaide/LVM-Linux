@@ -1,4 +1,5 @@
 # Table Of contents
+
 * [Introduction](#a)
 * [Configuration](#b)
   * [Physical Volumes](#c)
@@ -13,6 +14,8 @@
     * [Snapshots](#l)
     * [Etendre une LV](#m)
     * [Reduire une LV](#n)
+
+---
 
 # LVM sous Linux
 
